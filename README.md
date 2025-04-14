@@ -16,7 +16,7 @@ This repo contains Unraid CA templates for useful Docker apps I’ve come across
 3. Paste this repo’s URL:
 
 ```
-https://github.com/YOUR_GITHUB_USERNAME/unraid-templates
+https://github.com/itsnotashley/unraid-templates
 ```
 
 4. Save and browse the app via the Community Apps interface.
