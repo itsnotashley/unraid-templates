@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<Container>
+  <Name>Immich Automated Selfie Timelapse</Name>
+  <Repository>arnaudcayrol/immich-selfie-timelapse</Repository>
+  <Registry>https://hub.docker.com/r/arnaudcayrol/immich-selfie-timelapse</Registry>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/ArnaudCrl/immich-automated-selfie-timelapse/issues</Support>
+  <Project>https://github.com/ArnaudCrl/immich-automated-selfie-timelapse</Project>
+  <Overview>
+    Creates a timelapse video from your daily selfies stored in Immich. Access the web UI at port 5000 after setup.
+  </Overview>
+  <Category>MediaApp:Photos</Category>
+  <WebUI>http://[IP]:[PORT:5000]</WebUI>
+  <Icon>https://raw.githubusercontent.com/itsnotashley/unraid-templates/main/icons/immich-selfie-icon.png</Icon>
+
+  <Port>
+    <HostPort>5000</HostPort>
+    <ContainerPort>5000</ContainerPort>
+    <Protocol>tcp</Protocol>
+  </Port>
+
+  <Config Name="Immich API Key" Target="IMMICH_API_KEY" Default="" Mode="text" Description="Your Immich API key" Type="Variable" Display="always" Required="true"/>
+  <Config Name="Immich Base URL" Target="IMMICH_BASE_URL" Default="http://192.168.1.94:2283/api" Mode="text" Description="Immich Base URL (should end with /api)" Type="Variable" Display="always" Required="true"/>
+
+  <Config Name="Output Folder" Target="/app/output" Default="/mnt/user/appdata/immich-timelapse" Mode="rw" Description="Folder where timelapse videos will be saved" Type="Path" Display="always" Required="true"/>
+</Container>
